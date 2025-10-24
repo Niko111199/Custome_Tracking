@@ -44,7 +44,6 @@ def count_fingers(hand_landmarks, img_w, img_h, handedness_label=None):
         fingers.append(1 if tip_y < pip_y else 0)
 
     return sum(fingers), fingers
-# Video capture setup
 cap = cv2.VideoCapture(CAM_ID)
 prev_time = 0.0
 
