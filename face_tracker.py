@@ -14,7 +14,7 @@ mp_drawing_styles = mp.solutions.drawing_styles
 # Face Mesh initialization
 face_mesh = mp_face_mesh.FaceMesh(
     static_image_mode=False,
-    max_num_faces=1,
+    max_num_faces=2,
     refine_landmarks=True,
     min_detection_confidence=MIN_DETECTION_CONF,
     min_tracking_confidence=MIN_TRACKING_CONF
@@ -81,7 +81,7 @@ try:
         cv2.putText(frame, f'FPS: {int(fps)}', (10,30),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0,255,0), 2)
 
-        # Vis webcam-feed
+        # webcam-feed
         cv2.imshow('FaceTracker', frame)
         key = cv2.waitKey(1) & 0xFF
         if cv2.getWindowProperty('FaceTracker', cv2.WND_PROP_VISIBLE) < 1 or key == 27: 
